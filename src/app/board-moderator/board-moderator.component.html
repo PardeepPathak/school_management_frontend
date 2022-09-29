@@ -1,0 +1,36 @@
+<div class="panel panel-primary">
+  <div class="panel-heading" >
+    <h2>School Teacher Data</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Date Of Birth</th>
+          <th>Address</th>
+          <th>Date Of Joining</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let teacher of teacher | async">
+          <td>{{teacher.firstName}}</td>
+          <td>{{teacher.lastName}}</td>
+          <td>{{teacher.dob}}</td>
+          <td>{{teacher.address}}</td>
+          <td>{{teacher.dateOfJoining}}</td>
+          <td>
+            <button (click)="updateTeacher(teacher.teacherId)"
+              class="btn btn-default btn-info  pull-right">Update</button>
+            <button (click)="deleteTeacher(teacher.teacherId)" class="btn btn-danger "
+              style="margin-left: 5px;" >Delete</button>
+            <button (click)="teacherDetails(teacher.teacherId)" class="btn btn-info"
+              style="margin-left: 5px ;">View</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
