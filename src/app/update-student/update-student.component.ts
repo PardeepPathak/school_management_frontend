@@ -28,7 +28,7 @@ export class UpdateStudentComponent implements OnInit {
    this.goToUserBoard();
   }
   goToUserBoard(){
-    this.router.navigate(["/user"]);
+    this.router.navigate(["user"]);
   }
   onSubmit() {
     this.updateStudent();    
